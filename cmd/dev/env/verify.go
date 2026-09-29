@@ -11,7 +11,7 @@ import (
 // Map tool aliases to executable binary names
 var toolBinaries = map[string][]string{
 	"nodejs": {"node"},
-	"python": {"python3", "python"},
+	"python": {"python3", "python", "py"},
 	"cobol":  {"cobc"},
 }
 
