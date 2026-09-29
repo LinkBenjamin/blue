@@ -13,19 +13,20 @@ var toolBinaries = map[string][]string{
 	"nodejs": {"node"},
 	"python": {"python3", "python", "py"},
 	"cobol":  {"cobc"},
+	"vscode": {"code"},
 }
 
 var verifyCmd = &cobra.Command{
 	Use:       "verify [tool]",
 	Short:     "Verify present development tools on the workstation",
-	ValidArgs: []string{"nodejs", "python", "cobol"},
+	ValidArgs: []string{"nodejs", "python", "cobol", "vscode"},
 	Args:      cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if len(args) == 1 {
 			tool := strings.ToLower(args[0])
 			binaries, valid := toolBinaries[tool]
 			if !valid {
-				return fmt.Errorf("invalid tool '%s'. Allowed options: nodejs, python, cobol", tool)
+				return fmt.Errorf("invalid tool '%s'. Allowed options: nodejs, python, cobol, vscode", tool)
 			}
 
 			// Single tool check: Output true or false
