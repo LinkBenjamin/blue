@@ -13,4 +13,5 @@ func init() {
 	// Register child leaf nodes under SpinCmd
 	SpinCmd.AddCommand(pythonFastApiCmd)
 	SpinCmd.AddCommand(s3Cmd)
+	SpinCmd.AddCommand(vpcCmd)
 }
